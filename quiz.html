@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evolution of Web Browsers – Self-Assessment Quiz</title>
+    <style>
+        /* --- Basic page layout --- */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f7;
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 24px 28px 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p.description {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        /* --- Question styling --- */
+        .question {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .question:last-of-type {
+            border-bottom: none;
+        }
+
+        .question h3 {
+            margin-bottom: 8px;
+        }
+
+        .options {
+            margin-top: 8px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        /* --- Buttons --- */
+        .button-row {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #submit-btn {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        #reset-btn {
+            background-color: #6c757d;
+            color: #ffffff;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Results section --- */
+        #results {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        #overall-result {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pass {
+            color: #1f8b3a; /* green for pass */
+        }
+
+        .fail {
+            color: #c62828; /* red for fail */
+        }
+
+        #score {
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+
+        #detailed-results {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #detailed-results li {
+            margin-bottom: 6px;
+        }
+
+        .correct-answer {
+            color: #1f8b3a;
+            font-weight: 600;
+        }
+
+        .incorrect-answer {
+            color: #c62828;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Evolution of Web Browsers</h1>
+    <p class="description">
+        Test your understanding of the history, importance, and security of web browsers based on the essay.
+    </p>
+
+    <!-- Quiz form -->
+    <form id="quiz-form">
+        <!-- Q1: Fill in the blank -->
+        <div class="question">
+            <h3>1. Fill in the blank</h3>
+            <p>
+                Tim Berners-Lee’s first web browser was originally named
+                <strong>__________</strong> before it was later renamed Nexus.
+            </p>
+            <input type="text" id="q1" name="q1"
+                   placeholder="Type the original name of the browser">
+        </div>
+
+        <!-- Q2: Multiple choice - role of a browser -->
+        <div class="question">
+            <h3>2. Multiple choice</h3>
+            <p>Which statement best describes the role of a web browser?</p>
+            <div class="options">
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    It stores files on the user’s computer and manages hardware.
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    It acts as a gateway to the internet by retrieving data from web servers
+                    and displaying it as web pages.
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    It is a hardware device that connects computers to the internet.
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    It is only used for online entertainment.
+                </label>
+            </div>
+        </div>
+
+        <!-- Q3: Multiple choice - Browser Wars -->
+        <div class="question">
+            <h3>3. Multiple choice</h3>
+            <p>
+                During the “Browser Wars,” what main advantage helped Microsoft Internet Explorer
+                overtake Netscape Navigator?
+            </p>
+            <div class="options">
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    It was the very first web browser ever created.
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    It supported hyperlinks for the first time.
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    It was bundled for free with the Windows operating system.
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    It could only be purchased as a separate product.
+                </label>
+            </div>
+        </div>
+
+        <!-- Q4: Multiple choice - XSS -->
+        <div class="question">
+            <h3>4. Multiple choice</h3>
+            <p>
+                Which browser security threat involves malicious code being injected into a website
+                to steal cookies or session data?
+            </p>
+            <div class="options">
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    Phishing
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    Man-in-the-middle (MitM) attack
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    Cross-site scripting (XSS)
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    Drive-by download
+                </label>
+            </div>
+        </div>
+
+        <!-- Q5: Multi-selection -->
+        <div class="question">
+            <h3>5. Multi-selection</h3>
+            <p>Select <strong>all</strong> security threats mentioned in the essay that can target web browsers.</p>
+            <div class="options">
+                <label>
+                    <input type="checkbox" name="q5" value="xss">
+                    Cross-site scripting (XSS)
+                </label>
+                <label>
+                    <input type="checkbox" name="q5" value="csrf">
+                    Cross-site request forgery (CSRF)
+                </label>
+                <label>
+                    <input type="checkbox" name="q5" value="phishing">
+                    Phishing attacks
+                </label>
+                <label>
+                    <input type="checkbox" name="q5" value="driveby">
+                    Drive-by downloads
+                </label>
+                <label>
+                    <input type="checkbox" name="q5" value="mitm">
+                    Man-in-the-middle (MitM) attacks
+                </label>
+                <label>
+                    <input type="checkbox" name="q5" value="encryption">
+                    Strong encryption algorithms
+                </label>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-row">
+            <button type="submit" id="submit-btn">Submit Quiz</button>
+            <button type="button" id="reset-btn">Reset Quiz</button>
+        </div>
+    </form>
+
+    <!-- Results area -->
+    <div id="results">
+        <h2>Quiz Results</h2>
+        <p id="overall-result"></p>
+        <p id="score"></p>
+        <ul id="detailed-results"></ul>
+    </div>
+</div>
+
+<script>
+    // Handle quiz submission
+    document.getElementById('quiz-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // prevent page reload
+        gradeQuiz();
+    });
+
+    // Handle quiz reset
+    document.getElementById('reset-btn').addEventListener('click', function () {
+        resetQuiz();
+    });
+
+    // Function to grade the quiz
+    function gradeQuiz() {
+        let totalScore = 0;
+        const maxScore = 5; // 5 questions, 1 point each
+        const detailsList = document.getElementById('detailed-results');
+        detailsList.innerHTML = '';
+
+        // --- Q1: Fill in the blank ---
+        const q1Input = document.getElementById('q1').value.trim().toLowerCase();
+        const q1Correct = 'worldwideweb';
+        if (q1Input === q1Correct) {
+            totalScore++;
+            addDetail('Q1',
+                true,
+                'Tim Berners-Lee’s first browser was originally called WorldWideWeb.');
+        } else {
+            addDetail('Q1',
+                false,
+                'Correct answer: WorldWideWeb.');
+        }
+
+        // --- Q2: Single choice ---
+        const q2Answer = document.querySelector('input[name="q2"]:checked');
+        const q2Correct = 'b';
+        if (q2Answer && q2Answer.value === q2Correct) {
+            totalScore++;
+            addDetail('Q2',
+                true,
+                'A browser acts as a gateway to the internet, retrieving data from servers and displaying web pages.');
+        } else {
+            addDetail('Q2',
+                false,
+                'Correct answer: It acts as a gateway to the internet by retrieving data from web servers and displaying web pages.');
+        }
+
+        // --- Q3: Single choice ---
+        const q3Answer = document.querySelector('input[name="q3"]:checked');
+        const q3Correct = 'c';
+        if (q3Answer && q3Answer.value === q3Correct) {
+            totalScore++;
+            addDetail('Q3',
+                true,
+                'Internet Explorer was bundled for free with the Windows operating system.');
+        } else {
+            addDetail('Q3',
+                false,
+                'Correct answer: It was bundled for free with the Windows operating system.');
+        }
+
+        // --- Q4: Single choice ---
+        const q4Answer = document.querySelector('input[name="q4"]:checked');
+        const q4Correct = 'c';
+        if (q4Answer && q4Answer.value === q4Correct) {
+            totalScore++;
+            addDetail('Q4',
+                true,
+                'Cross-site scripting (XSS) injects malicious code into websites to steal cookies or session data.');
+        } else {
+            addDetail('Q4',
+                false,
+                'Correct answer: Cross-site scripting (XSS).');
+        }
+
+        // --- Q5: Multi-selection ---
+        const q5Selected = Array.from(document.querySelectorAll('input[name="q5"]:checked'))
+            .map(cb => cb.value);
+
+        const q5CorrectSet = ['xss', 'csrf', 'phishing', 'driveby', 'mitm'];
+        const q5IncorrectSet = ['encryption'];
+
+        // Check that all correct ones are selected and no incorrect one is selected
+        const hasAllCorrect = q5CorrectSet.every(val => q5Selected.includes(val));
+        const hasAnyIncorrect = q5Selected.some(val => q5IncorrectSet.includes(val));
+
+        if (hasAllCorrect && !hasAnyIncorrect) {
+            totalScore++;
+            addDetail('Q5',
+                true,
+                'Correct threats: XSS, CSRF, phishing attacks, drive-by downloads, and MitM attacks.');
+        } else {
+            addDetail('Q5',
+                false,
+                'Correct threats: XSS, CSRF, phishing attacks, drive-by downloads, and MitM attacks. "Strong encryption algorithms" is not a threat.');
+        }
+
+        // --- Overall result and score ---
+        const overallResult = document.getElementById('overall-result');
+        const scoreText = document.getElementById('score');
+
+        const percentage = (totalScore / maxScore) * 100;
+        const passThreshold = 70; // you can change this if your instructor wants
+
+        if (percentage >= passThreshold) {
+            overallResult.textContent = 'Result: PASS';
+            overallResult.className = 'pass';
+        } else {
+            overallResult.textContent = 'Result: FAIL';
+            overallResult.className = 'fail';
+        }
+
+        scoreText.textContent = `Your score: ${totalScore} / ${maxScore} (${percentage.toFixed(0)}%)`;
+    }
+
+    // Helper to add a list item for each question result
+    function addDetail(questionLabel, isCorrect, explanation) {
+        const li = document.createElement('li');
+        const resultSpan = document.createElement('span');
+
+        if (isCorrect) {
+            resultSpan.textContent = `${questionLabel}: Correct. `;
+            resultSpan.className = 'correct-answer';
+        } else {
+            resultSpan.textContent = `${questionLabel}: Incorrect. `;
+            resultSpan.className = 'incorrect-answer';
+        }
+
+        li.appendChild(resultSpan);
+        li.appendChild(document.createTextNode(explanation));
+        document.getElementById('detailed-results').appendChild(li);
+    }
+
+    // Reset the quiz and clear results
+    function resetQuiz() {
+        document.getElementById('quiz-form').reset();
+        document.getElementById('overall-result').textContent = '';
+        document.getElementById('overall-result').className = '';
+        document.getElementById('score').textContent = '';
+        document.getElementById('detailed-results').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>
